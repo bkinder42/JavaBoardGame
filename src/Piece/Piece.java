@@ -1,9 +1,8 @@
-package Chess.Piece;
+package Piece;
 
 import project.Chess.Location;
 
 import java.awt.*;
-import java.util.Vector;
 
 /**
  * Created with IntelliJ IDEA.

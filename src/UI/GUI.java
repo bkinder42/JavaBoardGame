@@ -1,4 +1,4 @@
-package Chess.Piece;
+package UI;
 
 /**
  * Created with IntelliJ IDEA.
@@ -9,6 +9,6 @@ package Chess.Piece;
  * Date: 5/13/2014
  * Time: 9:41 AM
  */
-public class Rook extends Piece {
+public class GUI {
 
 }

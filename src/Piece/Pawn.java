@@ -1,4 +1,4 @@
-package Chess.Piece;
+package Piece;
 
 import project.Chess.Location;
 

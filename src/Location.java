@@ -1,5 +1,3 @@
-package Chess;
-
 /**
  * Created with IntelliJ IDEA.
  *

@@ -1,5 +1,3 @@
-package Chess.UI;
-
 /**
  * Created with IntelliJ IDEA.
  *
@@ -7,8 +5,8 @@ package Chess.UI;
  * @version 1.0
  * @since 5/13/2014
  * Date: 5/13/2014
- * Time: 9:41 AM
+ * Time: 9:35 AM
  */
-public class GUI {
+public class Main {
 
 }

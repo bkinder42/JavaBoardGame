@@ -1,4 +1,4 @@
-package Chess.Board;
+package Piece;
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,8 +7,8 @@ package Chess.Board;
  * @version 1.0
  * @since 5/13/2014
  * Date: 5/13/2014
- * Time: 9:40 AM
+ * Time: 9:42 AM
  */
-public class Board {
+public class Queen extends Piece {
 
 }

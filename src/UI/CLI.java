@@ -1,4 +1,4 @@
-package Chess.Piece;
+package UI;
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,8 +7,8 @@ package Chess.Piece;
  * @version 1.0
  * @since 5/13/2014
  * Date: 5/13/2014
- * Time: 9:42 AM
+ * Time: 9:41 AM
  */
-public class Queen extends Piece {
+public class CLI {
 
 }
