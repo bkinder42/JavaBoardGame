@@ -28,4 +28,14 @@ public class Pawn extends Piece {
 
 
     }
+
+    @Override
+    public String getSymbol() {
+        if (isWhite()) {
+            symbol = "wP";
+        } else {
+            symbol = "bP";
+        }
+        return symbol;
+    }
 }

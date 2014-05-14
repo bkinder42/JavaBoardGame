@@ -13,4 +13,14 @@ public class Rook extends Piece {
     public Rook(boolean white, Location location) {
         super(white, location);
     }
+
+    @Override
+    public String getSymbol() {
+        if (isWhite()) {
+            symbol = "wR";
+        } else {
+            symbol = "bR";
+        }
+        return symbol;
+    }
 }

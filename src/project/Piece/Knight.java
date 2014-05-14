@@ -13,4 +13,14 @@ public class Knight extends Piece {
     public Knight(boolean white, Location location) {
         super(white, location);
     }
+
+    @Override
+    public String getSymbol() {
+        if (isWhite()) {
+            symbol = "wKn";
+        } else {
+            symbol = "bKn";
+        }
+        return symbol;
+    }
 }

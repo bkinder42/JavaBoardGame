@@ -13,4 +13,14 @@ public class King extends Piece {
     public King(boolean white, Location location) {
         super(white, location);
     }
+
+    @Override
+    public String getSymbol() {
+        if (isWhite()) {
+            symbol = "wK";
+        } else {
+            symbol = "bK";
+        }
+        return symbol;
+    }
 }

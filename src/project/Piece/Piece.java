@@ -1,5 +1,7 @@
 package project.Piece;
 import project.Resources.*;
+import sun.awt.Symbol;
+
 import java.awt.*;
 
 /**
@@ -11,10 +13,13 @@ import java.awt.*;
  */
 public abstract class Piece {
     private Color color;
+    private boolean white;
     private Location location;
+    protected String symbol = "";
 
     public Piece(boolean white, Location location) {
         this.location = location;
+        this.white = white;
         if (white) {
             this.color = Color.WHITE;
         } else {
@@ -36,6 +41,14 @@ public abstract class Piece {
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public boolean isWhite() {
+        return white;
+    }
+
+    public String getSymbol(){
+        return symbol;
     }
 
     @Override
