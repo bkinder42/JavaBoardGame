@@ -4,6 +4,8 @@ import project.Resources.*;
 import java.awt.*;
 
 /**
+ * This is a simple class to represent a chess piece. This class is only used to pass down variables and methods to other classes through
+ * inheritance.
  * @author Ben Kinder
  * @version 1.0
  * @since 5/13/2014
@@ -15,6 +17,13 @@ public abstract class Piece {
     @SuppressWarnings("WeakerAccess")
     protected String symbol = "";
 
+
+    /**
+     * Constructor that creates a Piece and sets color and location variables.
+     * @param white A boolean that determines the color of the Piece.
+     * @param location A Location Object that determines the location of the piece on the board.
+     * @see project.Resources.Location
+     */
     Piece(boolean white, Location location) {
         this.location = location;
         this.white = white;

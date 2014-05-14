@@ -1,6 +1,7 @@
 package project.Resources;
 
 /**
+ * A simple class to store an X, Y location
  * @author Ben Kinder
  * @version 1.0
  * @since 5/14/2014

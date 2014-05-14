@@ -2,8 +2,10 @@ package project.UI;
 
 import project.Board.Board;
 import project.Piece.Piece;
+import project.Resources.Location;
 
 /**
+ * A class to manage the Command Line or text version of the game.
  * @author Ben Kinder
  * @version 1.0
  * @since 5/13/2014
@@ -12,10 +14,10 @@ public class CLI {
     public CLI (Board board) {
         for (int i = 7; i >= 0; i--) {
             for (int j = 7; j >= 0; j--) {
-                if (board.getCell(j, i) == null) {
+                if (board.getCell(new Location(j, i)) == null) {
                     System.out.print("-\t");
                 } else {
-                    Piece p = (Piece)board.getCell(j, i);
+                    Piece p = (Piece)board.getCell(new Location(j, i));
                     System.out.print(p.getSymbol() + "\t");
                 }
             }

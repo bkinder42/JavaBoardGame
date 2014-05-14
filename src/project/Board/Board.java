@@ -4,6 +4,7 @@ import project.Piece.*;
 import project.Resources.Location;
 
 /**
+ * A class to manage the board, add and remove pieces.
  * @author Ben Kinder
  * @version 1.0
  * @since 5/13/2014
@@ -56,6 +57,9 @@ public class Board {
         board[x][y] = piece;
     }
 
+    /**
+     * Removed all pieces from the board and sets up the board for the beginning of a chess game (adds pieces in the proper places)
+     */
     @SuppressWarnings("WeakerAccess")
     public void init() {
         for (int i = 0; i <= 7; i++) {
@@ -99,8 +103,13 @@ public class Board {
         addToBoard(bk);
     }
 
-    public Object getCell(int x, int y) {
-        return board[x][y];
+    /**
+     * Returns the object at the location specified in the entered Location object.
+     * @param location A location object representing the location of the object you wish to access.
+     * @return Returns the object at the location specified.
+     */
+    public Object getCell(Location location) {
+        return board[location.getX()][location.getY()];
     }
 
 }
