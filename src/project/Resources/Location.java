@@ -4,8 +4,6 @@ package project.Resources;
  * @author Ben Kinder
  * @version 1.0
  * @since 5/14/2014
- * Date: 5/14/2014
- * Time: 8:10 AM
  */
 public class Location {
     private int x;

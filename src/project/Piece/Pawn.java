@@ -7,11 +7,9 @@ import java.util.Vector;
  * @author Ben Kinder
  * @version 1.0
  * @since 5/13/2014
- * Date: 5/13/2014
- * Time: 9:41 AM
  */
 public class Pawn extends Piece {
-    private Vector<Location> movement = new Vector<Location>(0, 1);
+    private final Vector<Location> movement = new Vector<Location>(0, 1);
 
     public Pawn(boolean white, Location location) {
         super(white, location);

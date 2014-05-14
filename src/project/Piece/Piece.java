@@ -1,6 +1,5 @@
 package project.Piece;
 import project.Resources.*;
-import sun.awt.Symbol;
 
 import java.awt.*;
 
@@ -8,16 +7,15 @@ import java.awt.*;
  * @author Ben Kinder
  * @version 1.0
  * @since 5/13/2014
- * Date: 5/13/2014
- * Time: 9:40 AM
  */
 public abstract class Piece {
     private Color color;
-    private boolean white;
+    private final boolean white;
     private Location location;
+    @SuppressWarnings("WeakerAccess")
     protected String symbol = "";
 
-    public Piece(boolean white, Location location) {
+    Piece(boolean white, Location location) {
         this.location = location;
         this.white = white;
         if (white) {
@@ -43,7 +41,7 @@ public abstract class Piece {
         this.location = location;
     }
 
-    public boolean isWhite() {
+    boolean isWhite() {
         return white;
     }
 
