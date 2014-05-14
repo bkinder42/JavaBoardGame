@@ -1,11 +1,13 @@
+package Resources;
+
 /**
  * Created with IntelliJ IDEA.
  *
  * @author Ben
  * @version 1.0
- * @since 5/13/2014
- * Date: 5/13/2014
- * Time: 9:40 AM
+ * @since 5/14/2014
+ * Date: 5/14/2014
+ * Time: 8:10 AM
  */
 public class Location {
     private int x;
@@ -33,7 +35,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Location{" +
+        return "Resources.Location{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';

@@ -1,7 +1,5 @@
 package Piece;
-
-import project.Chess.Location;
-
+import Resources.*;
 import java.awt.*;
 
 /**

@@ -1,5 +1,7 @@
 package Piece;
 
+import Resources.Location;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -10,5 +12,7 @@ package Piece;
  * Time: 9:41 AM
  */
 public class Rook extends Piece {
-
+    public Rook(boolean white, Location location) {
+        super(white, location);
+    }
 }
