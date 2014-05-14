@@ -1,9 +1,7 @@
 package project.Resources;
 
 /**
- * Created with IntelliJ IDEA.
- *
- * @author Ben
+ * @author Ben Kinder
  * @version 1.0
  * @since 5/14/2014
  * Date: 5/14/2014

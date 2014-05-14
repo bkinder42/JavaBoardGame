@@ -1,5 +1,5 @@
-
-Board
-Piece
-Resources
-UI
+project
+project.Board
+project.Piece
+project.Resources
+project.UI

@@ -3,9 +3,7 @@ package project.Piece;
 import project.Resources.Location;
 
 /**
- * Created with IntelliJ IDEA.
- *
- * @author Ben
+ * @author Ben Kinder
  * @version 1.0
  * @since 5/13/2014
  * Date: 5/13/2014
