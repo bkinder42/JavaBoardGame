@@ -1,6 +1,6 @@
-package Piece;
+package project.Piece;
 
-import Resources.*;
+import project.Resources.*;
 import java.util.Vector;
 
 /**

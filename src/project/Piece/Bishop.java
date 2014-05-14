@@ -1,6 +1,6 @@
-package Piece;
+package project.Piece;
 
-import Resources.Location;
+import project.Resources.Location;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,4 @@
-package Resources;
+package project.Resources;
 
 /**
  * Created with IntelliJ IDEA.
@@ -35,7 +35,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Resources.Location{" +
+        return "project.Resources.Location{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';

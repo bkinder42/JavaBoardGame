@@ -1,4 +1,4 @@
-package UI;
+package project.UI;
 
 /**
  * Created with IntelliJ IDEA.

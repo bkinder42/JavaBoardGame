@@ -1,6 +1,6 @@
-package Piece;
+package project.Piece;
 
-import Resources.Location;
+import project.Resources.Location;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,8 +11,8 @@ import Resources.Location;
  * Date: 5/13/2014
  * Time: 9:41 AM
  */
-public class Rook extends Piece {
-    public Rook(boolean white, Location location) {
+public class Knight extends Piece {
+    public Knight(boolean white, Location location) {
         super(white, location);
     }
 }

@@ -1,3 +1,5 @@
+package project.UI;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -5,8 +7,8 @@
  * @version 1.0
  * @since 5/13/2014
  * Date: 5/13/2014
- * Time: 9:35 AM
+ * Time: 9:41 AM
  */
-public class Main {
+public class GUI {
 
 }

@@ -1,5 +1,5 @@
-package Piece;
-import Resources.*;
+package project.Piece;
+import project.Resources.*;
 import java.awt.*;
 
 /**
@@ -42,7 +42,7 @@ public abstract class Piece {
 
     @Override
     public String toString() {
-        return "Piece{" +
+        return "project.Piece{" +
                 "color=" + color +
                 ", location=" + location +
                 '}';
