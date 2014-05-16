@@ -11,7 +11,13 @@ import project.Resources.Location;
  * @since 5/13/2014
  */
 public class CLI {
+    private Board board;
     public CLI (Board board) {
+        this.board = board;
+        drawBoard();
+    }
+
+    public void drawBoard() {
         for (int i = 7; i >= 0; i--) {
             for (int j = 7; j >= 0; j--) {
                 if (board.getCell(new Location(j, i)) == null) {

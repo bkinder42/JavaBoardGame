@@ -1,5 +1,6 @@
 package project.Piece;
 
+import project.Board.Board;
 import project.Resources.*;
 import java.util.Vector;
 
@@ -15,6 +16,7 @@ public class Pawn extends Piece {
      * @see project.Resources.Location
      */
     private final Vector<Location> movement = new Vector<Location>(0, 1);
+    private int moves = 0;
 
     /**
      * Simply uses the constructor inherited from Piece.
@@ -30,11 +32,45 @@ public class Pawn extends Piece {
     /**
      * Updates the 'movement' Vector adding places that it is possible for the Pawn to move to and removing all other places.
      */
-    public void setMovement() {
+    public void setMovement(Board b) {
         int x = getLocation().getX();
         int y = getLocation().getY();
-        Location move1 = new Location(x, y+1);
-        movement.add(move1);
+
+        for (int i = 0; i < movement.capacity(); i++) {
+            movement.set(i, null);
+        }
+
+        if (b.getCell(new Location(x, y+1)) != null) {
+
+        } else {
+            movement.add(new Location(x, y+1));
+        }
+
+        if (b.getCell(new Location(x+1, y+1)) != null) {
+            movement.add(new Location(x+1, y+1));
+        } else {
+
+        }
+        if (b.getCell(new Location(x-1, y+1)) != null) {
+            movement.add(new Location(x-1, y+1));
+        } else {
+
+        }
+
+        if (moves == 0 && b.getCell(new Location(x, y+2)) == null) {
+            movement.add(new Location(x, y+2));
+        } else {
+
+        }
+    }
+
+    public void move(Board b, Location l) {
+        if (movement.contains(l)) {
+            b.moveOnBoard(this, l);
+        } else {
+            System.out.println("Invalid Move");
+        }
+        moves++;
     }
 
     /**

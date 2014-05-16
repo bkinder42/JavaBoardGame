@@ -16,6 +16,7 @@ public abstract class Piece {
     private Location location;
     @SuppressWarnings("WeakerAccess")
     protected String symbol = "";
+    protected boolean dead = false;
 
 
     /**
@@ -74,6 +75,10 @@ public abstract class Piece {
      */
     public String getSymbol(){
         return symbol;
+    }
+
+    public void setOut(boolean b){
+        dead = b;
     }
 
 
