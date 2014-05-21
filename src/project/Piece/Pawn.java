@@ -12,13 +12,6 @@ import java.util.Vector;
  */
 public class Pawn extends Piece {
     /**
-     * A vector that will contain all of the places on the Board that the Pawn can move. These places are stored in Location objects.
-     * @see project.Resources.Location
-     */
-    private final Vector<Location> movement = new Vector<Location>(0, 1);
-    private int moves = 0;
-
-    /**
      * Simply uses the constructor inherited from Piece.
      * @param white A boolean that determines the color of the Pawn.
      * @param location A Location object that determines the location of the Pawn on the Board.
@@ -32,6 +25,7 @@ public class Pawn extends Piece {
     /**
      * Updates the 'movement' Vector adding places that it is possible for the Pawn to move to and removing all other places.
      */
+    @Override
     public void setMovement(Board b) {
         int x = getLocation().getX();
         int y = getLocation().getY();
@@ -40,24 +34,24 @@ public class Pawn extends Piece {
             movement.set(i, null);
         }
 
-        if (b.getCell(new Location(x, y+1)) != null) {
+        if (y > 6 || b.getCell(new Location(x, y+1)) != null) {
 
         } else {
             movement.add(new Location(x, y+1));
         }
 
-        if (b.getCell(new Location(x+1, y+1)) != null) {
+        if (x < 7 && y < 7 && b.getCell(new Location(x+1, y+1)) != null) {
             movement.add(new Location(x+1, y+1));
         } else {
 
         }
-        if (b.getCell(new Location(x-1, y+1)) != null) {
+        if (x > 0 && y < 7 && b.getCell(new Location(x-1, y+1)) != null) {
             movement.add(new Location(x-1, y+1));
         } else {
 
         }
 
-        if (moves == 0 && b.getCell(new Location(x, y+2)) == null) {
+        if (moves == 0 && y < 6 && b.getCell(new Location(x, y+2)) == null) {
             movement.add(new Location(x, y+2));
         } else {
 
@@ -65,7 +59,14 @@ public class Pawn extends Piece {
     }
 
     public void move(Board b, Location l) {
-        if (movement.contains(l)) {
+        setMovement(b);
+        boolean contains = false;
+        for (int i = 0; i < movement.capacity(); i++) {
+            if (movement.elementAt(i).getX() == l.getX() && movement.elementAt(i).getY() == l.getY()) {
+                contains = true;
+            }
+        }
+        if (contains) {
             b.moveOnBoard(this, l);
         } else {
             System.out.println("Invalid Move");

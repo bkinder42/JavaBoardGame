@@ -1,5 +1,6 @@
 package project.Piece;
 
+import project.Board.Board;
 import project.Resources.Location;
 
 /**
@@ -18,6 +19,44 @@ public class Knight extends Piece {
      */
     public Knight(boolean white, Location location) {
         super(white, location);
+    }
+
+    @Override
+    public void setMovement(Board board) {
+        int x = getLocation().getX();
+        int y = getLocation().getY();
+
+        if (y < 6 && x > 0) {
+            movement.add(new Location(x - 1, y + 2));
+        }
+
+        if (y < 6 && x < 7) {
+            movement.add(new Location(x + 1, y + 2));
+        }
+
+        if (y > 1 && x > 0) {
+            movement.add(new Location(x - 1, y - 2));
+        }
+
+        if (y > 1 && x < 7) {
+            movement.add(new Location(x + 1, y - 2));
+        }
+
+        if (y < 7 && x > 1) {
+            movement.add(new Location(x - 2, y + 1));
+        }
+
+        if (y < 7 && x < 6) {
+            movement.add(new Location(x + 2, y + 1));
+        }
+
+        if (y > 0 && x > 1) {
+            movement.add(new Location(x - 2, y - 1));
+        }
+
+        if (y > 0 && x < 6) {
+            movement.add(new Location(x + 2, y - 1));
+        }
     }
 
     /**

@@ -1,5 +1,6 @@
 package project.Piece;
 
+import project.Board.Board;
 import project.Resources.Location;
 
 /**
@@ -18,6 +19,57 @@ public class Rook extends Piece {
      */
     public Rook(boolean white, Location location) {
         super(white, location);
+    }
+
+    @Override
+    public void setMovement(Board board) {
+        int x = getLocation().getX();
+        int y = getLocation().getY();
+
+        while (x > 0 && board.getCell(new Location(x-1, y)) == null) {
+            movement.add(new Location(x-1, y));
+            x--;
+        }
+
+        if (x > 0) {
+            movement.add(new Location(x-1, y));
+        }
+
+        x = getLocation().getX();
+        y = getLocation().getY();
+
+        while (x < 7 && board.getCell(new Location(x+1, y)) == null) {
+            movement.add(new Location(x+1, y));
+            x++;
+        }
+
+        if (x < 7) {
+            movement.add(new Location(x+1, y));
+        }
+
+        x = getLocation().getX();
+        y = getLocation().getY();
+
+        while (y > 0 && board.getCell(new Location(x, y-1)) == null) {
+            movement.add(new Location(x, y-1));
+            y--;
+        }
+
+        if (y > 0) {
+            movement.add(new Location(x, y-1));
+        }
+
+        x = getLocation().getX();
+        y = getLocation().getY();
+
+        while (y < 7 && board.getCell(new Location(x, y+1)) == null) {
+            movement.add(new Location(x, y+1));
+            y++;
+        }
+
+        if (y < 7) {
+            movement.add(new Location(x, y+1));
+        }
     }
 
     /**
