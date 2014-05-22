@@ -12,7 +12,7 @@ import project.Resources.Location;
 public class Rook extends Piece {
     /**
      * Simply uses the constructor inherited from Piece.
-     * @param white A boolean that determines the color of the Pawn.
+     * @param white A boolean that determines the color of the Rook.
      * @param location A Location object that determines the location of the Pawn on the Board.
      * @see project.Piece.Piece
      * @see project.Resources.Location

@@ -1,5 +1,6 @@
 package project.Piece;
 
+import project.Board.Board;
 import project.Resources.Location;
 
 /**
@@ -11,13 +12,51 @@ import project.Resources.Location;
 public class King extends Piece {
     /**
      * Simply uses the constructor inherited from Piece.
-     * @param white A boolean that determines the color of the Pawn.
+     * @param white A boolean that determines the color of the King.
      * @param location A Location object that determines the location of the Pawn on the Board.
      * @see project.Piece.Piece
      * @see project.Resources.Location
      */
     public King(boolean white, Location location) {
         super(white, location);
+    }
+
+    @Override
+    public void setMovement(Board board) {
+        int x = getLocation().getX();
+        int y = getLocation().getY();
+
+        if (x > 0) {
+            movement.add(new Location(x-1, y));
+        }
+
+        if (x > 0 && y > 0) {
+            movement.add(new Location(x-1, y-1));
+        }
+
+        if (x > 0 && y < 7) {
+            movement.add(new Location(x-1, y+1));
+        }
+
+        if (x < 7) {
+            movement.add(new Location(x+1, y));
+        }
+
+        if (x < 7 && y > 0) {
+            movement.add(new Location(x+1, y-1));
+        }
+
+        if (x < 7 && y < 7) {
+            movement.add(new Location(x+1, y+1));
+        }
+
+        if (y < 7) {
+            movement.add(new Location(x, y+1));
+        }
+
+        if (y > 0) {
+            movement.add(new Location(x, y-1));
+        }
     }
 
     /**

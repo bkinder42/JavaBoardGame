@@ -1,5 +1,6 @@
 package project.Piece;
 
+import project.Board.Board;
 import project.Resources.Location;
 
 /**
@@ -11,7 +12,7 @@ import project.Resources.Location;
 public class Queen extends Piece {
     /**
      * Simply uses the constructor inherited from Piece.
-     * @param white A boolean that determines the color of the Pawn.
+     * @param white A boolean that determines the color of the Queen.
      * @param location A Location object that determines the location of the Pawn on the Board.
      * @see project.Piece.Piece
      * @see project.Resources.Location
@@ -20,6 +21,82 @@ public class Queen extends Piece {
         super(white, location);
     }
 
+    @Override
+    public void setMovement(Board board) {
+        int x = getLocation().getX();
+        int y = getLocation().getY();
+
+        while (x < 7 && y < 7 && board.getCell(new Location(x+1, y+1)) == null) {
+            movement.add(new Location(x+1, y+1));
+            x++;
+            y++;
+        }
+
+        if (x < 7 && y < 7) {
+            movement.add(new Location(x+1, y+1));
+        }
+
+        x = getLocation().getX();
+        y = getLocation().getY();
+
+        while (x > 0 && y > 0 && board.getCell(new Location(x-1, y-1)) == null) {
+            movement.add(new Location(x-1, y-1));
+            x--;
+            y--;
+        }
+
+        if (x > 0 && y > 0) {
+            movement.add(new Location(x-1, y-1));
+        }
+
+        x = getLocation().getX();
+        y = getLocation().getY();
+
+        while (x > 0 && board.getCell(new Location(x-1, y)) == null) {
+            movement.add(new Location(x-1, y));
+            x--;
+        }
+
+        if (x > 0) {
+            movement.add(new Location(x-1, y));
+        }
+
+        x = getLocation().getX();
+        y = getLocation().getY();
+
+        while (x < 7 && board.getCell(new Location(x+1, y)) == null) {
+            movement.add(new Location(x+1, y));
+            x++;
+        }
+
+        if (x < 7) {
+            movement.add(new Location(x+1, y));
+        }
+
+        x = getLocation().getX();
+        y = getLocation().getY();
+
+        while (y > 0 && board.getCell(new Location(x, y-1)) == null) {
+            movement.add(new Location(x, y-1));
+            y--;
+        }
+
+        if (y > 0) {
+            movement.add(new Location(x, y-1));
+        }
+
+        x = getLocation().getX();
+        y = getLocation().getY();
+
+        while (y < 7 && board.getCell(new Location(x, y+1)) == null) {
+            movement.add(new Location(x, y+1));
+            y++;
+        }
+
+        if (y < 7) {
+            movement.add(new Location(x, y+1));
+        }
+    }
 
     /**
      * Returns the symbol to be used for the Pawn to be used by the CLI Class. This overrides the method in
