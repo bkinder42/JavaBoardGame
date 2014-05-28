@@ -26,35 +26,38 @@ public class Knight extends Piece {
         int x = getLocation().getX();
         int y = getLocation().getY();
 
-        if (y < 6 && x > 0) {
+        movement.setSize(0);
+        movement.trimToSize();
+
+        if (y < 6 && x > 0 && ((board.getCell(new Location(x-1, y+2)) != null && board.getCell(new Location(x-1, y+2)).isWhite() != isWhite()) || board.getCell(new Location(x-1, y+2)) == null)) {
             movement.add(new Location(x - 1, y + 2));
         }
 
-        if (y < 6 && x < 7) {
+        if (y < 6 && x < 7 && ((board.getCell(new Location(x+1, y+2)) != null && board.getCell(new Location(x+1, y+2)).isWhite() != isWhite()) || board.getCell(new Location(x+1, y+2)) == null)) {
             movement.add(new Location(x + 1, y + 2));
         }
 
-        if (y > 1 && x > 0) {
+        if (y > 1 && x > 0 && ((board.getCell(new Location(x-1, y-2)) != null && board.getCell(new Location(x-1, y-2)).isWhite() != isWhite()) || board.getCell(new Location(x-1, y-2)) == null)) {
             movement.add(new Location(x - 1, y - 2));
         }
 
-        if (y > 1 && x < 7) {
+        if (y > 1 && x < 7 && ((board.getCell(new Location(x+1, y-2)) != null && board.getCell(new Location(x+1, y-2)).isWhite() != isWhite()) || board.getCell(new Location(x+1, y-2)) == null)) {
             movement.add(new Location(x + 1, y - 2));
         }
 
-        if (y < 7 && x > 1) {
+        if (y < 7 && x > 1 && ((board.getCell(new Location(x-2, y+1)) != null && board.getCell(new Location(x-2, y+1)).isWhite() != isWhite()) || board.getCell(new Location(x-2, y+1)) == null)) {
             movement.add(new Location(x - 2, y + 1));
         }
 
-        if (y < 7 && x < 6) {
+        if (y < 7 && x < 6 && ((board.getCell(new Location(x+2, y+1)) != null && board.getCell(new Location(x+2, y+1)).isWhite() != isWhite()) || board.getCell(new Location(x+2, y+1)) == null)) {
             movement.add(new Location(x + 2, y + 1));
         }
 
-        if (y > 0 && x > 1) {
+        if (y > 0 && x > 1 && ((board.getCell(new Location(x-2, y-1)) != null && board.getCell(new Location(x-2, y-1)).isWhite() != isWhite()) || board.getCell(new Location(x-2, y-1)) == null)) {
             movement.add(new Location(x - 2, y - 1));
         }
 
-        if (y > 0 && x < 6) {
+        if (y > 0 && x < 6 && ((board.getCell(new Location(x+2, y-1)) != null && board.getCell(new Location(x+2, y-1)).isWhite() != isWhite()) || board.getCell(new Location(x+2, y-1)) == null)) {
             movement.add(new Location(x + 2, y - 1));
         }
     }

@@ -74,7 +74,7 @@ public abstract class Piece {
      * Returns a boolean telling if the Piece is white.
      * @return A boolean, if true the Piece is white, if false the Piece is black.
      */
-    boolean isWhite() {
+    public boolean isWhite() {
         return white;
     }
 
@@ -88,6 +88,11 @@ public abstract class Piece {
 
     public void setOut(boolean b){
         dead = b;
+    }
+
+    public Vector<Location> getMovement(Board board) {
+        setMovement(board);
+        return movement;
     }
 
     public void setMovement(Board board) {
@@ -110,6 +115,9 @@ public abstract class Piece {
         moves++;
     }
 
+    public boolean isDead() {
+        return dead;
+    }
 
     @Override
     public String toString() {

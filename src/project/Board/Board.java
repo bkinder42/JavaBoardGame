@@ -3,6 +3,9 @@ package project.Board;
 import project.Piece.*;
 import project.Resources.Location;
 
+import java.awt.*;
+import java.util.Vector;
+
 /**
  * A class to manage the board, add and remove pieces.
  * @author Ben Kinder
@@ -11,6 +14,9 @@ import project.Resources.Location;
  */
 public class Board {
     private final Piece[][] board = new Piece[8][8];
+    private Vector<Piece> pieces = new Vector<Piece>(32, 1);
+    private Vector<Piece> white = new Vector<Piece>(16, 1);
+    private Vector<Piece> black = new Vector<Piece>(16, 1);
 
     Pawn wp1 = new Pawn(true, new Location(0, 1));
     Pawn wp2 = new Pawn(true, new Location(1, 1));
@@ -46,8 +52,67 @@ public class Board {
     Queen bq = new Queen(false, new Location(3, 7));
     King bk = new King(false, new Location(4, 7));
 
+    private void initVector() {
+        pieces.add(wp1);
+        pieces.add(wp2);
+        pieces.add(wp3);
+        pieces.add(wp4);
+        pieces.add(wp5);
+        pieces.add(wp6);
+        pieces.add(wp7);
+        pieces.add(wp8);
+        pieces.add(wr1);
+        pieces.add(wr2);
+        pieces.add(wkn1);
+        pieces.add(wkn2);
+        pieces.add(wb1);
+        pieces.add(wb2);
+        pieces.add(wk);
+        pieces.add(wq);
+
+        pieces.add(bp1);
+        pieces.add(bp2);
+        pieces.add(bp3);
+        pieces.add(bp4);
+        pieces.add(bp5);
+        pieces.add(bp6);
+        pieces.add(bp7);
+        pieces.add(bp8);
+        pieces.add(br1);
+        pieces.add(br2);
+        pieces.add(bkn1);
+        pieces.add(bkn2);
+        pieces.add(bb1);
+        pieces.add(bb2);
+        pieces.add(bq);
+        pieces.add(bk);
+
+        for (int i = 0; i < pieces.capacity(); i++) {
+            if (pieces.elementAt(i).isWhite() && !pieces.elementAt(i).isDead()) {
+                white.add(pieces.elementAt(i));
+            }
+
+            if (!pieces.elementAt(i).isWhite() && !pieces.elementAt(i).isDead()) {
+                black.add(pieces.elementAt(i));
+            }
+        }
+    }
+
+    public Vector<Piece> getWhite() {
+        return white;
+    }
+
+    public Vector<Piece> getBlack() {
+        return black;
+    }
+
+    public Vector<Piece> getPieces() {
+        return pieces;
+    }
+
     public Board() {
         init();
+        initVector();
     }
 
     public void addToBoard(Piece piece) {
@@ -65,7 +130,7 @@ public class Board {
 
     public void moveOnBoard(Piece piece, Location location) {
         if (board[location.getX()][location.getY()] != null) {
-            ((Piece)(getCell(location))).setOut(true);
+            getCell(location).setOut(true);
             board[location.getX()][location.getY()] = null;
         }
         removeFromBoard(piece);

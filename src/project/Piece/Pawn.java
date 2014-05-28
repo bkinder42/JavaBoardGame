@@ -30,9 +30,8 @@ public class Pawn extends Piece {
         int x = getLocation().getX();
         int y = getLocation().getY();
 
-        for (int i = 0; i < movement.capacity(); i++) {
-            movement.set(i, null);
-        }
+        movement.setSize(0);
+        movement.trimToSize();
 
         if (y > 6 || b.getCell(new Location(x, y+1)) != null) {
 
@@ -42,16 +41,15 @@ public class Pawn extends Piece {
 
         if (x < 7 && y < 7 && b.getCell(new Location(x+1, y+1)) != null) {
             movement.add(new Location(x+1, y+1));
-        } else {
-
         }
-        if (x > 0 && y < 7 && b.getCell(new Location(x-1, y+1)) != null) {
+
+        if (x > 0 && y < 7 && b.getCell(new Location(x-1, y+1)) != null && b.getCell(new Location(x-1, y+1)).isWhite() != isWhite()) {
             movement.add(new Location(x-1, y+1));
         } else {
 
         }
 
-        if (moves == 0 && y < 6 && b.getCell(new Location(x, y+2)) == null) {
+        if (moves == 0 && y < 6 && b.getCell(new Location(x, y+2)) == null || (b.getCell(new Location(x, y+2)) != null && b.getCell(new Location(x, y+2)).isWhite() != isWhite())) {
             movement.add(new Location(x, y+2));
         } else {
 

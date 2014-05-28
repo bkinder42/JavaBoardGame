@@ -1,9 +1,11 @@
 package project.UI;
 
+import project.AI;
 import project.Board.Board;
 import project.Piece.Piece;
 import project.Resources.Location;
 
+import java.awt.*;
 import java.util.Scanner;
 
 /**
@@ -17,14 +19,20 @@ public class CLI {
     Scanner scan = new Scanner(System.in);
     boolean playing = true;
 
+
+
     public CLI (Board board) {
         this.board = board;
         drawBoard(board);
 
+        AI ai = new AI(board, Color.WHITE);
+
         while (playing) {
             movePiece();
-        }
+            ai.move(board);
+            drawBoard(board);
 
+        }
     }
 
     public void drawBoard(Board board) {

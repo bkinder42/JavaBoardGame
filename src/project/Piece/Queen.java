@@ -26,13 +26,16 @@ public class Queen extends Piece {
         int x = getLocation().getX();
         int y = getLocation().getY();
 
+        movement.setSize(0);
+        movement.trimToSize();
+
         while (x < 7 && y < 7 && board.getCell(new Location(x+1, y+1)) == null) {
             movement.add(new Location(x+1, y+1));
             x++;
             y++;
         }
 
-        if (x < 7 && y < 7) {
+        if (x < 7 && y < 7 && (board.getCell(new Location(x+1, y+1)) != null && board.getCell(new Location(x+1, y+1)).isWhite() != isWhite())) {
             movement.add(new Location(x+1, y+1));
         }
 
@@ -45,7 +48,7 @@ public class Queen extends Piece {
             y--;
         }
 
-        if (x > 0 && y > 0) {
+        if (x > 0 && y > 0 && (board.getCell(new Location(x-1, y-1)) != null && board.getCell(new Location(x-1, y-1)).isWhite() != isWhite())) {
             movement.add(new Location(x-1, y-1));
         }
 
@@ -57,7 +60,7 @@ public class Queen extends Piece {
             x--;
         }
 
-        if (x > 0) {
+        if (x > 0 && (board.getCell(new Location(x-1, y)) != null && board.getCell(new Location(x-1, y)).isWhite() != isWhite())) {
             movement.add(new Location(x-1, y));
         }
 
@@ -69,7 +72,7 @@ public class Queen extends Piece {
             x++;
         }
 
-        if (x < 7) {
+        if (x < 7 && (board.getCell(new Location(x+1, y)) != null && board.getCell(new Location(x+1, y)).isWhite() != isWhite())) {
             movement.add(new Location(x+1, y));
         }
 
@@ -81,7 +84,7 @@ public class Queen extends Piece {
             y--;
         }
 
-        if (y > 0) {
+        if (y > 0 && (board.getCell(new Location(x, y-1)) != null && board.getCell(new Location(x, y-1)).isWhite() != isWhite())) {
             movement.add(new Location(x, y-1));
         }
 
@@ -93,7 +96,7 @@ public class Queen extends Piece {
             y++;
         }
 
-        if (y < 7) {
+        if (y < 7 && (board.getCell(new Location(x, y+1)) != null && board.getCell(new Location(x, y+1)).isWhite() != isWhite())) {
             movement.add(new Location(x, y+1));
         }
     }
