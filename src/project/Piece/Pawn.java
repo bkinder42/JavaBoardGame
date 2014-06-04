@@ -49,11 +49,15 @@ public class Pawn extends Piece {
 
         }
 
-        if (moves == 0 && y < 6 && b.getCell(new Location(x, y+2)) == null || (b.getCell(new Location(x, y+2)) != null && b.getCell(new Location(x, y+2)).isWhite() != isWhite())) {
+        /**
+        if (moves == 0 && y < 6 && b.getCell(new Location(x, y+2)) == null || ((b.getCell(new Location(x, y+2)) != null && b.getCell(new Location(x, y+2)).isWhite() != isWhite()))) {
             movement.add(new Location(x, y+2));
         } else {
 
         }
+        */
+
+        moves++;
     }
 
     public void move(Board b, Location l) {

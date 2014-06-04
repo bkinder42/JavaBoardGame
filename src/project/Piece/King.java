@@ -59,7 +59,7 @@ public class King extends Piece {
             movement.add(new Location(x, y+1));
         }
 
-        if (y > 0 && (board.getCell(new Location(x, y-1)) == null || (board.getCell(new Location(x, y-1)) != null && board.getCell(new Location(x, y+1)).isWhite() != isWhite()))) {
+        if (y > 0 && (board.getCell(new Location(x, y-1)) == null || (board.getCell(new Location(x, y-1)) != null && board.getCell(new Location(x, y-1)).isWhite() != isWhite()))) {
             movement.add(new Location(x, y-1));
         }
     }
